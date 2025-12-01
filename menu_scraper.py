@@ -167,6 +167,7 @@ def menu_scraper(target_date: date, meal: str):
     Extend this function to select meal & scrape items afterward.
     """
     options = Options()
+    options.add_argument("--headless=new")
     options.add_argument("--window-size=1400,1000")
 
     driver = webdriver.Chrome(options=options)
@@ -175,7 +176,7 @@ def menu_scraper(target_date: date, meal: str):
     try:
         # Open page
         driver.get(URL)
-        time.sleep(2)
+        time.sleep(1.5)
 
         # Click "Change" to open dialog
         change_btn = driver.find_element(By.CSS_SELECTOR, "button.DateMealFilterButton")
@@ -199,7 +200,7 @@ def menu_scraper(target_date: date, meal: str):
             btn = driver.find_element(By.XPATH, "//button[.//span[normalize-space()='Done']]")
             driver.execute_script("arguments[0].click();", btn)
             print("✅ Clicked Done.")
-            time.sleep(2)
+            time.sleep(4.0)
         except Exception:
             print("⚠️ Done button not found.")
             return
