@@ -199,10 +199,11 @@ def process_menu_dict(menu_dict):
         for text_item in dishes_list:
             text_item = text_item.lower()
             words = re.findall(r'\b\w+\b', text_item)
-            filtered_words = [word for word in words if word not in stop_words]
+            filtered_words = [word for word in words 
+                              if word not in stop_words and len(word) >= 3]
             all_words.extend(filtered_words)
 
-    return ", ".join(all_words)
+    return " ".join(all_words)
 
 
 # -----------------------------

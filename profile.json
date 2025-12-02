@@ -1,6 +1,8 @@
 {
-    "name": "Alice",
-    "age": 30,
-    "is_student": false,
-    "courses": ["Math", "Science"]
+    "age": 21,
+    "borned_country": "China",
+    "race": "Asian",
+    "is_student": true,
+    "is_vegetarian": false,
+    "favorite_food": ["beef", "spinach"]
 }
