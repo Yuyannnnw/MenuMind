@@ -148,7 +148,7 @@ from menu_scraper import menu_scraper
 from supervised_model import build_learner
 from llm import llama_score
 
-MIN_ROWS_TO_TRAIN = 1
+MIN_ROWS_TO_TRAIN = 2
 ROUNDS = 30
 CSV_PATH = "data/dining_data.csv"
 MODEL_PATH = "learner.pkl"
@@ -249,6 +249,8 @@ def main():
                 print("🍽️ Menu:")
                 print(menu)
                 menu = process_menu_dict(menu)
+                print("🍽️ Process Menu:")
+                print(menu)
                 break
 
         # LLM scoring
@@ -274,10 +276,13 @@ def main():
         # Ask for user rating
         while True:
             rating = input("Your rating for this advice (1–5, or 'q' to quit): ").strip()
-            if rating.lower() == "q":
+            if rating.lower() == "q" and learner.fitted:
                 print("Exiting. Saving model...")
                 save_learner(learner)
                 print("Model is saved.")
+                return
+            elif rating.lower() == "q":
+                print("Exiting directly. No model saved.")
                 return
             try:
                 r_int = int(rating)

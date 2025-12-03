@@ -38,7 +38,7 @@ class Learner:
         return max(1.0, min(5.0, pred))
 
 def build_learner() -> Learner:
-    vect = HashingVectorizer(n_features=1024, alternate_sign=False, norm="l2")
+    vect = HashingVectorizer(n_features=1024, alternate_sign=False, norm=None)
     # modest learning rate; tweak if needed
     sgd = SGDRegressor(loss="squared_error", learning_rate="constant", eta0=0.02, random_state=SEED)
     return Learner(vectorizer=vect, model=sgd)

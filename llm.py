@@ -2,7 +2,7 @@ import ollama
 import json
 from typing import Tuple
 
-MODEL_NAME = "gemma3:1b" #"llama3.1:8b" 
+MODEL_NAME = "llama3.1:8b"
 
 def llama_score(menu_text: str, user_profile: dict, model: str = MODEL_NAME) -> Tuple[int, str]:
     """
@@ -26,6 +26,7 @@ def llama_score(menu_text: str, user_profile: dict, model: str = MODEL_NAME) -> 
     """
 
     try:
+        print(prompt)
         response = ollama.chat(
             model=MODEL_NAME,
             messages=[{"role": "system", "content": sys_rules},
