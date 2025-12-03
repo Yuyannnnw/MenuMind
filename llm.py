@@ -26,7 +26,6 @@ def llama_score(menu_text: str, user_profile: dict, model: str = MODEL_NAME) -> 
     """
 
     try:
-        print(prompt)
         response = ollama.chat(
             model=MODEL_NAME,
             messages=[{"role": "system", "content": sys_rules},
