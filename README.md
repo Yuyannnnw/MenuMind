@@ -20,7 +20,7 @@ The program will:
 
 1. Load or initialize the learner
 
-2. Obtain a menu ([synthetic](simulate_menu.py.py) or [scraped](menu_scraper.py))
+2. Obtain a menu ([synthetic](simulate_menu.py) or [scraped](menu_scraper.py))
 
 3. Generate an LLM score ([llm.py](llm.py))
 
