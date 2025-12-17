@@ -6,8 +6,6 @@ MenuMind is a personalized dining recommendation system designed to help student
 
 The project is developed using the University of Virginia’s Observatory Hill Dining Room (O-Hill) as a real-world case study.
 
-## 📄 Project Report: [MenuMind Final Report (PDF)](docs/MenuMind_Report.pdf)
-
 ## ⚙️ Setup and Usage
 
 ### User Setup
@@ -31,3 +29,6 @@ The program will:
 5. Prompt the user for feedback
 
 6. Update the model and metrics ([supervised_model.py](supervised_model.py))
+
+
+## 📄 Project Report: [MenuMind Final Report (PDF)](docs/MenuMind_Report.pdf)
