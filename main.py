@@ -13,7 +13,7 @@ from llm import llama_score
 from plot import plot_metrics
 
 MIN_ROWS_TO_TRAIN = 50
-ROUNDS = 80
+ROUNDS = 35
 CSV_PATH = "data/dining_data.csv"
 MODEL_PATH = "learner.pkl"
 
